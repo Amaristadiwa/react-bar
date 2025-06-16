@@ -1,0 +1,69 @@
+.travel-card {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background: white;
+  margin: 1rem;
+}
+
+.travel-card:hover {
+  transform: translateY(-5px);
+}
+
+.travel-card-image {
+  height: 180px;
+  overflow: hidden;
+}
+
+.travel-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.travel-card:hover .travel-card-image img {
+  transform: scale(1.05);
+}
+
+.travel-card-content {
+  padding: 1.2rem;
+}
+
+.travel-card-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: #2f3542;
+}
+
+.travel-card-description {
+  color: #57606f;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  height: 60px;
+  overflow: hidden;
+}
+
+.travel-card-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.travel-card-duration,
+.travel-card-rating {
+  font-size: 0.8rem;
+  color: #57606f;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .travel-card {
+    max-width: 100%;
+  }
+}

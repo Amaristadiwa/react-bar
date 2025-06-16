@@ -1,26 +1,21 @@
 import React from 'react';
+import './Navbar.css'; // Make sure this file contains your styles
 
 const NavItems = ({ isMobileMenuOpen }) => {
   const navLinks = [
-    { path: '/', text: 'Home' },
-    { path: '/about', text: 'About' },
-    { path: '/services', text: 'Services' },
-    { path: '/portfolio', text: 'Portfolio' },
-    { path: '/contact', text: 'Contact' },
+    { path: '/', text: 'My travel Journal' },
   ];
 
   return (
-    <div className={`nav-items ${isMobileMenuOpen ? 'active' : ''}`}>
-      <ul className="nav-list">
+    <nav className="navbar">
+      <div className="nav-center">
         {navLinks.map((link, index) => (
-          <li key={index} className="nav-item">
-            <a href={link.path} className="nav-link">
-              {link.text}
-            </a>
-          </li>
+          <a key={index} href={link.path} className="nav-link">
+            {link.text}
+          </a>
         ))}
-      </ul>
-    </div>
+      </div>
+    </nav>
   );
 };
 
