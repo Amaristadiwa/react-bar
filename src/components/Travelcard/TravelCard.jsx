@@ -1,4 +1,6 @@
-import React from 'react';
+// import Navbar from "./components/Navbar/Navbar";
+// import TravelCard from "./components/TravelCard";
+import React from "react";
 import './TravelCard.css';
 
 const TravelCard = ({ destination, description, imageUrl, duration, rating }) => {

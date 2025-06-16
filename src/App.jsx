@@ -1,34 +1,47 @@
 import React from 'react';
 import Navbar from "./components/Navbar/Navbar";
-import TravelCard from "../src/components/Travelcard";
-import travelCardsData from "../src/components/Travelcard/TravelCardData";
+import VideoPlayer from './components/VideoPlayer/VideoPlayer';
+import TravelCard from './components/Travelcard/TravelCard';
+import travelCardsData from './components/Travelcard/TravelCardData';
 import "./App.css";
+import Video from '/Videos/bali.mp4';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-        gap: '20px',
-        padding: '20px',
-        maxWidth: '1400px',
-        margin: '0 auto'
-      }}>
+      <div className="cards-grid">
         {travelCardsData.map(card => (
-          <TravelCard
-            key={card.id}
-            destination={card.destination}
-            description={card.description}
-            imageUrl={card.imageUrl}
-            duration={card.duration}
-            rating={card.rating}
-          />
+          <TravelCard key={card.id} {...card} />
         ))}
       </div>
+        <VideoPlayer
+        src={Video}
+        title="My Bali Adventure"
+        description="Beautiful sunset at Uluwatu Beach during our summer trip"
+      />
     </div>
   );
 }
 
+import Footer from '../src/components/Footer';
+
+function App() {
+  return (
+    <div className="App">
+      <Navbar />
+      <div className="cards-grid">
+        {travelCardsData.map(card => (
+          <TravelCard key={card.id} {...card} />
+        ))}
+      </div>
+      <VideoPlayer
+        src={Video}
+        title="My Bali Adventure"
+        description="Beautiful sunset at Uluwatu Beach during our summer trip"
+      />
+      <Footer />
+    </div>
+  );
+}
 export default App;
